@@ -1,0 +1,26 @@
+body {
+    background: lightblue;
+}
+
+.canvas {
+    background: #fff;
+    margin: 20px;
+}
+
+.grid {
+    display: grid;
+   /* grid-template-rows: repeat(60, 1fr);
+    grid-template-columns: repeat(60, 1fr);*/
+    border: 1px solid black;
+    width: 400px;
+    height: 400px;
+  }
+  
+  .cell {
+    
+    background-color: white;
+  }
+
+.hovering {
+  background-color: black !important;
+}
