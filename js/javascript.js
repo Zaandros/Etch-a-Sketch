@@ -4,15 +4,17 @@ let height = 10;
 let width = 10;
 let gridSize = 16;
 const grid = document.querySelector('.grid');
-let cells = document.querySelectorAll(".cell");
 const smallBtn = document.querySelector(".small");
 const mediumBtn = document.querySelector(".medium");
 const largeBtn = document.querySelector(".large");
-     
+const sizeSlider = document.querySelector(".slider");
+const sizeDisplay = document.querySelector(".canvas-size");
 
 smallBtn.addEventListener("click", smallSize);
 mediumBtn.addEventListener("click", mediumSize);
 largeBtn.addEventListener("click", largeSize);
+sizeSlider.addEventListener("change", sizeSelector);
+
 
 drawGrid();
 
@@ -37,7 +39,15 @@ function largeSize() {
   drawGrid();
 }
 
+function sizeSelector() {
+  gridSize = sizeSlider.value;
+  sizeDisplay.textContent = gridSize;
+  reset();
+  drawGrid();
+}
+
 function drawGrid() {
+
   let boardSize = gridSize * gridSize;
   grid.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
   grid.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
@@ -54,7 +64,6 @@ function drawGrid() {
 }
 
 function detectMouse(value) {
-  console.log(value);
   value.target.classList.add("hovering");
 }
 
