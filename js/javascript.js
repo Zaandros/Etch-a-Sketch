@@ -9,11 +9,14 @@ const mediumBtn = document.querySelector(".medium");
 const largeBtn = document.querySelector(".large");
 const sizeSlider = document.querySelector(".slider");
 const sizeDisplay = document.querySelector(".canvas-size");
+const clearButton = document.querySelector(".clear");
+
 
 smallBtn.addEventListener("click", smallSize);
 mediumBtn.addEventListener("click", mediumSize);
 largeBtn.addEventListener("click", largeSize);
 sizeSlider.addEventListener("change", sizeSelector);
+clearButton.addEventListener("click", clearCanvas);
 
 
 drawGrid();
@@ -58,13 +61,18 @@ function drawGrid() {
         cell.classList.add(`cell`);       
         cell.addEventListener("mouseenter", detectMouse);
         grid.insertAdjacentElement("beforeend", cell);
-          
+           
     }
-  
+ 
 }
 
 function detectMouse(value) {
   value.target.classList.add("hovering");
+}
+
+function clearCanvas() {
+  reset();
+  drawGrid();
 }
 
 function reset() {
