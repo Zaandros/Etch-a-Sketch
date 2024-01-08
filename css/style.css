@@ -29,7 +29,7 @@ body {
     background-color: white;
 }
 
-.hoveringBlack {
+/*.hoveringBlack {
   background-color: black !important;
 }
 
@@ -37,13 +37,9 @@ body {
   background-color: yellow !important;
 }
 
-.hoveringRandom {
-  background-color: black !important;
-}
-
 .delete {
   background-color: white !important;
-}
+} */
 
 .size-options {
   display: flex;
