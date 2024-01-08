@@ -5,8 +5,8 @@ let height = 10;
 let width = 10;
 let gridSize = 16;
 let cell = document.createElement('div');
-let colourConfirmed = false;
 let blackSelected = true;
+let colourConfirmed = false;
 let randomSelected = false;
 let erase = false;
 
@@ -24,7 +24,6 @@ const colourPicker = document.querySelector(".colour-picker");
 const confirmColour = document.querySelector(".confirm");
 const confirmRandom = document.querySelector(".random");
 const rubber = document.querySelector(".rubber");
-let colourValue = document.querySelector(".hovering");
 
 
 //event listeners
@@ -48,6 +47,8 @@ drawGrid();
 
 function smallSize() {
   gridSize = 16;
+  sizeSlider.value = gridSize;
+  sizeDisplay.textContent = gridSize;
   console.log(gridSize);
   reset();
   drawGrid();
@@ -55,6 +56,8 @@ function smallSize() {
 
 function mediumSize() {
   gridSize = 40;
+  sizeSlider.value = gridSize;
+  sizeDisplay.textContent = gridSize;
   console.log(gridSize);
   reset();
   drawGrid();
@@ -62,6 +65,8 @@ function mediumSize() {
 
 function largeSize() {
   gridSize = 50;
+  sizeSlider.value = gridSize;
+  sizeDisplay.textContent = gridSize;
   console.log(gridSize);
   reset();
   drawGrid();
@@ -93,38 +98,30 @@ function drawGrid() {
 
 function detectMouse(value) {
   if (blackSelected == true) {
-  //cell.style.backgroundColor = "black";
-  value.target.classList.add("hoveringBlack");
-  value.target.classList.remove("hoveringYellow");
-  value.target.classList.remove("hoveringRandom");
-  value.target.classList.remove("delete");
-  
+    
+  value.target.style.backgroundColor = "black";
   }
 
   else if (colourConfirmed == true) {
 
-    value.target.classList.add("hoveringYellow");
-    value.target.classList.remove("hoveringBlack");
-    value.target.classList.remove("hoveringRandom");
-    value.target.classList.remove("delete");
-  
+    let userColourSelection = colourPicker.value;
+    value.target.style.backgroundColor = userColourSelection;
   }
+
   else if (randomSelected == true) {
     
-    value.target.classList.add("hoveringRandom");
-    value.target.classList.remove("hoveringBlack");
-    value.target.classList.remove("hoveringYellow");
-    value.target.classList.remove("delete");
-
     let letters = '0123456789ABCDEF';
     let color = '#';
       for (let i = 0; i < 6; i++) {
       color += letters[Math.floor(Math.random() * 16)];
       }
-
+      
+    value.target.style.backgroundColor = color;
   }
+
   else if (erase == true) {
-    value.target.classList.add("delete");
+    
+    value.target.style.backgroundColor = "white";
   }
  
 }
