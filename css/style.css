@@ -29,18 +29,6 @@ body {
     background-color: white;
 }
 
-/*.hoveringBlack {
-  background-color: black !important;
-}
-
-.hoveringYellow {
-  background-color: yellow !important;
-}
-
-.delete {
-  background-color: white !important;
-} */
-
 .size-options {
   display: flex;
   width: 400px;
@@ -58,4 +46,12 @@ body {
   display: flex;
   justify-content: center;
   font-style: italic;
+}
+
+.footer {
+  display: flex;
+  padding-top: 20px;
+  justify-content: center;
+  font-style: italic;
+  font-size: 10px;
 }
