@@ -29,8 +29,16 @@ body {
     background-color: white;
 }
 
-.hovering {
-  background-color: black;
+.hoveringBlack {
+  background-color: black !important;
+}
+
+.hoveringYellow {
+  background-color: yellow !important;
+}
+
+.hoveringRandom {
+  background-color: black !important;
 }
 
 .delete {
