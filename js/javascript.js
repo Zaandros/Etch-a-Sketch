@@ -46,7 +46,7 @@ drawGrid();
 //functions
 
 function smallSize() {
-  gridSize = 16;
+  gridSize = 20;
   sizeSlider.value = gridSize;
   sizeDisplay.textContent = gridSize;
   console.log(gridSize);
@@ -55,7 +55,7 @@ function smallSize() {
   }
 
 function mediumSize() {
-  gridSize = 40;
+  gridSize = 75;
   sizeSlider.value = gridSize;
   sizeDisplay.textContent = gridSize;
   console.log(gridSize);
@@ -64,7 +64,7 @@ function mediumSize() {
 }
 
 function largeSize() {
-  gridSize = 50;
+  gridSize = 150;
   sizeSlider.value = gridSize;
   sizeDisplay.textContent = gridSize;
   console.log(gridSize);
